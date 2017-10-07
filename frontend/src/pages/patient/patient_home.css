@@ -1,30 +1,3 @@
-@charset "UTF-8";
-@import url(font-awesome.min.css);
-@import url("https://fonts.googleapis.com/css?family=Lato:300,700,300italic,700italic");
-
-body {
-    margin: 0px;
-    background: #fff;
-}
-
-.header {
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    height: 50px;
-    background: #f0f0f0;
-    border: 1px solid #CCC;
-    margin: 0px auto;
-}
-
-.info {
-    width: 100%;
-    position: fixed;
-    background: #f0f0f0;
-    border: 1px solid #CCC;
-    margin: 0px auto;
-}
-
 /* Style the buttons that are used to open and close the accordion panel */
 p.accordion {
     background-color: #2195f2;

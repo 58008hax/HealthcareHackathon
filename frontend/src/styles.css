@@ -9,3 +9,12 @@ body {
     background: #fff;
 }
 
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    height: 50px;
+    background: #f0f0f0;
+    border: 1px solid #CCC;
+    margin: 0px auto;
+}
