@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="patient_home.css" />
+    <title>'Get patient name' Info</title>
+</head>
+
+<body>
+
+
+    <header id="header">
+        <h1>Company Title</h1>
+    </header>
+
+    <section id=info>
+
+        <h1><u>'Patient Name'</u></h1>
+
+        <p class="accordion"><b>Basic Information</b></p>
+        <div class="panel">
+            <p>Name: <br> Date of Birth: <br> Address: <br> Social Security Number: <br> Race/Ethnicity: <br> Gender: <br> Height: <br> Weight: <br> Email Address: <br> Phone Number: <br> Healthcare Insurace/Provider: <br> Fun Fact: <br> <br>
+                <u>Emergency Contact</u><br> Name: <br> Phone Number: <br>
+
+            </p>
+        </div>
+
+        <p class="accordion"><b>Current Status</b></p>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <p class="accordion"><b>Medication History</b></p>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <p class="accordion"><b>Vaccine History</b></p>
+        <div class="panel">
+            <p>asdflkasdf</p>
+        </div>
+
+        <p class="accordion"><b>Patient History</b></p>
+        <div class="panel">
+            <p>asdasdf</p>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                var acc = document.getElementsByClassName("accordion");
+                var panel = document.getElementsByClassName('panel');
+                for (var i = 0; i < acc.length; i++) {
+                    acc[i].onclick = function() {
+                        var setClasses = !this.classList.contains('active');
+                        setClass(acc, 'active', 'remove');
+                        setClass(panel, 'show', 'remove');
+                        if (setClasses) {
+                            this.classList.toggle("active");
+                            this.nextElementSibling.classList.toggle("show");
+                        }
+                    }
+                }
+
+                function setClass(els, className, fnName) {
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].classList[fnName](className);
+                    }
+                }
+            });
+        </script>
+    </section>
+
+</body>
+
+</html>
