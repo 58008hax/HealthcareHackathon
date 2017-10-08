@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="patient_home.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
     <title>New Patient</title>
 </head>
 
@@ -15,7 +17,7 @@
 
         <div class="form-style-10">
             <h1>Please fill in the following information to continue</h1>
-            <form>
+            <form id="target">
                 <div class="section"><span>1</span>First Name &amp; Address</div>
                 <div class="inner-wrap">
                     <label>Your Full Name <input type="text" id="name" name="field1" /></label>
@@ -39,31 +41,12 @@
                 </div>
 
                 <div class="button-section">
-                    <!--                    <input type="submit" name="Sign Up" id="targets"/>-->
-                    <button class="button" id="target">Submit</button>
+                    <input type="submit" class="button"/>
                 </div>
             </form>
         </div>
 
-        <script language="JavaScript" type="text/javascript">
-            $("#target").submit(function(event) {
-                alert("Handler for .submit() called.");
-
-                var fullName = $("#name").val();
-                var email = $("#mail").val();
-                var phone = $("phone").val();
-                var street = $("#street").val();
-                var city = $("#city").val();
-                var state = $("state").val();
-                var password = $("password").val();
-
-                //AJAX GET
-                $.get("155.246.208.15:8080/user/add?name=" + fullName + "&email=" + email + "&phoneNumber" + phone + "&street=" + street + "&city=" + city + "&state=" + state + "&password" + password);
-                event.preventDefault(); //wont refresh page after submit
-                //redirect if successful
-            });
-
-        </script>
+        <script src="js/patient_new.js" type="text/javascript"></script>
 
         <script language="JavaScript" type="text/javascript">
             function checkPasswordMatch() {

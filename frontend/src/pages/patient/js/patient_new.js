@@ -1,4 +1,5 @@
 $("#target").submit(function (event) {
+    console.log("Submit");
     alert("Handler for .submit() called.");
     
     var fullName = $("#name").val();
