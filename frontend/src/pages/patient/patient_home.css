@@ -99,11 +99,15 @@ textarea {
 }
 
 .button {
-    padding-left: 560px;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: inline;
 }
 
-button {
-    margin-left: .5em;
+.clear {
+    margin-left: 500px;
+    background-color: red;
 }
 
+.submit {
+    background-color: green;
+}

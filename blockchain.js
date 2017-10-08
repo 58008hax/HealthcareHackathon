@@ -38,6 +38,7 @@ var initHttpServer = () => {
     //app.get('/', (req, res) => res.sendFile(__dirname + '/frontend/src/index.html'));
 
     app.get('/blocks', (req, res) => res.send(JSON.stringify(blockchain)));
+    app.get('/newestBlock', (req, res) => res.send(JSON.stringify(blockchain[blockchain.length -1])));
     app.post('/mineBlock', (req, res) => {
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
@@ -49,7 +50,8 @@ var initHttpServer = () => {
         res.send(sockets.map(s => s._socket.remoteAddress + ':' + s._socket.remotePort));
     });
     app.post('/addPeer', (req, res) => {
-        connectToPeers([req.body.peer]);
+        var socketStr = "ws://" + req.connection.remoteAddress + ":6001";
+        addNewPeer(socketStr);
         res.send();
     });
     app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
@@ -138,11 +140,19 @@ var isValidNewBlock = (newBlock, previousBlock) => {
 
 var connectToPeers = (newPeers) => {
     newPeers.forEach((peer) => {
-        var ws = new WebSocket(peer);
+        var ws = new WebSocket(newPeers);
         ws.on('open', () => initConnection(ws));
         ws.on('error', () => {
             console.log('connection failed')
         });
+    });
+};
+
+var addNewPeer = (peer) => {
+    var ws = new WebSocket(peer);
+    ws.on('open', () => initConnection(ws));
+    ws.on('error', () => {
+        console.log('failed to add peer');
     });
 };
 
