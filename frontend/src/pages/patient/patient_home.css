@@ -9,7 +9,10 @@
 #info {
     padding-left: 15%;
     padding-right: 15%;
+}
 
+h1 {
+    padding-bottom: 10px;
 }
 
 
@@ -45,11 +48,12 @@ p.accordion.active:after {
 }
 
 div.panel {
-    padding: 0 18px;
-    background-color: white;
+    padding: 0px 18px;
+    background-color: whitesmoke;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    margin-bottom: 18px;
 }
 
 div.panel.show {
@@ -95,11 +99,15 @@ textarea {
 }
 
 .button {
-    padding-left: 560px;
-    padding-bottom: 5px;
+    margin-bottom: 5px;
+    display: inline;
 }
 
-button {
-    margin-left: .5em;
+.clear {
+    margin-left: 500px;
+    background-color: red;
 }
 
+.submit {
+    background-color: green;
+}
