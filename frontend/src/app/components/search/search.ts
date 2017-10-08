@@ -17,4 +17,12 @@ export class SearchComponent {
             this.userData = "Something went wrong";
         }
     }
+
+    scanPatient() {
+        
+    }
+
+    searchPatient() {
+
+    }
 }
