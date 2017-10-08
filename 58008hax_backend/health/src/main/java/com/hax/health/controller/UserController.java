@@ -23,9 +23,9 @@ public class UserController {
 
 	@GetMapping(path="/add")
 	public @ResponseBody User addNewUser (@RequestParam String name
-			, @RequestParam String email, @RequestParam String password) {
+			, @RequestParam String email, @RequestParam String phoneNumber, @RequestParam String street, @RequestParam String city, @RequestParam String state, @RequestParam String password) {
 		
-		return userService.createNewUser(name, email, password);
+		return userService.createNewUser(name, email, phoneNumber, street, city, state, password);
 	}
 	
 	/*@GetMapping(path="/find")

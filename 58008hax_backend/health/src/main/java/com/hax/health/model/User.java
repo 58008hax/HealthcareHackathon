@@ -13,14 +13,22 @@ public class User {
 
 	private String name;
 	private String email;
+	private String phoneNumber;
+	private String street;
+	private String city;
+	private String state;
 	private Integer password;
 
 	public User() {
 	}
 
-	public User(String name, String email, Integer password) {
+	public User(String name, String email, String phoneNumber, String street, String city, String state, Integer password) {
 		this.name = name;
 		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.street = street;
+		this.city = city;
+		this.state = state;
 		this.password = password;
 	}
 
@@ -54,6 +62,38 @@ public class User {
 
 	public void setPassword(Integer password) {
 		this.password = password;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	public boolean equals(User user) {
