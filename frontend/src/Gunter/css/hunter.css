@@ -34,6 +34,23 @@
 }
 .boxed {
   width: 300px;;
-  border: 1px solid black ;
+  border: 1px solid ;
   padding: 10px;
+  border-radius: 5px;
+    border-color: #558B2F;
+}
+.headers{
+  width: 300px;
+  border-bottom: 1px solid #558B2F;
+}
+.indent{
+  padding-left: 20px;
+  font-size: .95em;
+}
+.usenotes{
+  margin-top: 10px;
+}
+.modal-title{
+  font-size: 2em;
+  border-bottom: 1px solid #558B2F;
 }
