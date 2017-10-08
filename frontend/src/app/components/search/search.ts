@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DataService } from '../../services/data.service';
 import { HttpService } from '../../services/http.service';
@@ -11,7 +12,7 @@ import { HttpService } from '../../services/http.service';
 export class SearchComponent {
     userData:any;
     
-    constructor(private dataService:DataService, private httpService:HttpService) {
+    constructor(public router:Router, private dataService:DataService, private httpService:HttpService) {
         if (this.dataService.userData != null) {
             this.userData = this.dataService.userData;
         } else {
@@ -26,6 +27,8 @@ export class SearchComponent {
     searchPatient() {
         this.httpService.getLastestBlock().subscribe((result) => {
             console.log(result.data);
+            this.dataService.searchData = result.data;
+            this.router.navigate(["/patient"]);
         });
     }
 }

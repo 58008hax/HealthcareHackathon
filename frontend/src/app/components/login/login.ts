@@ -36,26 +36,15 @@ export class LoginComponent {
         switch(this.userType) {
             case "Doctor":
                 console.log("User is doctor...");
-                this.httpService.checkLogin(this.username, this.password).subscribe((data) => {
-                    console.log(data);
-                    this.dataService.userData = data;
-                    console.log(this.dataService.userData);
-                    this.router.navigate(['/search']);
-                });
+                this.router.navigate(['/search']);
                 break;
             case "Patient":
                 console.log("User is patient...");
-                this.httpService.checkLogin(this.username, this.password).subscribe((data) => {
-                    this.dataService.userData = data.json;
-                    this.router.navigate(['/patient']);
-                });
+                this.router.navigate(['/patient']);
                 break;
             case "Pharmacy":
                 console.log("User is pharmacy...");
-                this.httpService.checkLogin(this.username, this.password).subscribe((data) => {
-                    this.dataService.userData = data.json;
-                    this.router.navigate(['/search']);
-                });
+                this.router.navigate(['/search']);
                 break;
             default:
                 alert("Please select who you are! (Doctor, Patient, Pharmacy");

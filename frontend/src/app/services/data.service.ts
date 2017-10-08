@@ -5,18 +5,24 @@ export class DataService {
     userType:string;
     loginPatientData:any;
     userData:any;
+    searchData:any;
 
     constructor() {
         this.loginPatientData = null;
         this.userType = null;
         this.userData = null;
+        this.searchData = null;
     }
 
     setLoginData(data) {
         this.loginPatientData = data;
     }
 
-    setUserType(u) {
-        this.userType = u;
+    setUserType(user) {
+        this.userType = user;
+    }
+
+    setSearchData(data) {
+        this.searchData = data;
     }
 }

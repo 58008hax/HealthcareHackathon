@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { DataService } from '../../services/data.service';
-import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'patient',
@@ -11,15 +10,19 @@ import { HttpService } from '../../services/http.service';
 export class PatientComponent {
   userId;
   userType:string;
-  patientName = 'Scott Russell';
+  pData:any;
 
-  constructor (private dataService:DataService, private httpService:HttpService) {
+  constructor (private dataService:DataService) {
     if (this.dataService.loginPatientData != null) {
       this.userId = this.dataService.loginPatientData.userId;
       this.userType = "Patient";
       console.log("This is user " + this.userId + ", a " + this.userType);
     }
 
+    if (this.dataService.searchData != null) {
+      this.pData = this.dataService.searchData;
+      console.log(this.pData);
+    }
   }
 }
   
