@@ -1,1 +1,26 @@
 <app-header></app-header>
+
+<div class="search">
+    <div class="scan">
+        <h1>Scan Patient's QR Code:</h1>
+        <div class="scan-img">
+            <img width="150px" height="150px" src="../../assets/images/qr_code_example.png">
+        </div>
+        <div class="scan-buttons">
+            <button id="bscan" style="float: left;" type="button" (click)="scanPatient()">Scan</button>
+            <button id="bsearch" style="float: right;" type="button" (click)="searchPatient()">Search</button>
+        </div>
+    </div>
+
+    <div class="manual">
+        <h1>Or enter the Patient's Id:</h1>
+        <div class="manual-input">
+            <input type="text" name="patientID" placeholder="Patient ID"><br>
+        </div>
+        <div class="scan-buttons">
+            <button id="bsearch" style="width: 100%;" type="button" (click)="searchPatient()">Search</button>
+        </div>
+    </div>
+
+
+</div>
