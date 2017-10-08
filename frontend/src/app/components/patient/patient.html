@@ -1,84 +1,90 @@
 <app-header></app-header>
 
-<h1>{{patientName}}</h1>
+<div class="patient">
+    <h1 class="patient-name">{{patientName}}</h1>
 
-<p-accordion>
-    <p-accordionTab header="Basic Information">
-        <!--All Basic Information data goes here.-->
-        <div class="drop-down-info">
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>DoB</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Address</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>SSN</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Race</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Gender</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Height</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Weight</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Phone</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Healthcare</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Fun Fact</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Emergency Contact</th>
-                    <td>Name</td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                </tr>
-            </table>
-        </div>
-    </p-accordionTab>
-    <p-accordionTab header="Current Status">
-        <!--Patient's Current Status goes here. Should be most recent block.-->
-        <p>Hello Motto</p>
-    </p-accordionTab>
-    <p-accordionTab header="Medication History">
-        <!--All Medication History for patient.-->
-        <p>Hello Motto</p>
-    </p-accordionTab>
-    <p-accordionTab header="Vaccine/Shot History">
-        <!--All Vaccine and Shot History data goes here.-->
-        <p>Hello Motto</p>
-    </p-accordionTab>
-    <p-accordionTab header="Patient History">
-        <!--Show's patient's visit history.-->
-        <p>Hello Motto</p>
-    </p-accordionTab>
-</p-accordion>
+    <p-accordion class="accordion">
+        <p-accordionTab header="Basic Information">
+            <!--All Basic Information data goes here.-->
+            <div class="drop-down-info">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>DoB</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>SSN</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Race</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Height</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Healthcare</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Fun Fact</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Emergency Contact</th>
+                        <td></td><!--Name-->
+                    </tr>
+                    <tr>
+                        <td></td><!--Phone-->
+                    </tr>
+                </table>
+            </div>
+        </p-accordionTab>
+        <p-accordionTab header="Current Status">
+            
+        </p-accordionTab>
+        <p-accordionTab header="Medication History">
+            <!--All Medication History for patient.-->
+
+        </p-accordionTab>
+        <!--
+        <p-accordionTab header="Vaccine/Shot History">
+
+        </p-accordionTab>
+        -->
+        <p-accordionTab header="Patient History">
+            <!--Show's patient's visit history.-->
+
+        </p-accordionTab>
+    </p-accordion>
+
+    <div class="current-meds">
+
+    </div>
+</div>

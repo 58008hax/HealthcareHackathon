@@ -15,7 +15,6 @@ export class PatientComponent {
 
   constructor (private dataService:DataService, private httpService:HttpService) {
     if (this.dataService.loginPatientData != null) {
-      //Patient is currently logged in
       this.userId = this.dataService.loginPatientData.userId;
       this.userType = "Patient";
       console.log("This is user " + this.userId + ", a " + this.userType);

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { DataService } from '../../services/data.service';
+import { HttpService } from '../../services/http.service';
 
 @Component({
     selector: 'search',
@@ -10,7 +11,7 @@ import { DataService } from '../../services/data.service';
 export class SearchComponent {
     userData:any;
     
-    constructor(private dataService:DataService) {
+    constructor(private dataService:DataService, private httpService:HttpService) {
         if (this.dataService.userData != null) {
             this.userData = this.dataService.userData;
         } else {
@@ -23,6 +24,8 @@ export class SearchComponent {
     }
 
     searchPatient() {
-
+        this.httpService.getLastestBlock().subscribe((result) => {
+            console.log(result.data);
+        });
     }
 }
