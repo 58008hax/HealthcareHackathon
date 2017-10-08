@@ -11,9 +11,9 @@ const appRoutes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
     { path: 'search', component: SearchComponent },
-    { path: 'mypatients', component: MyPatientsComponent },
+    { path: 'myPatients', component: MyPatientsComponent },
     { path: 'patient', component: PatientComponent },
-    { path: 'mydoctors', component: MyDoctorsComponent },
+    { path: 'myDoctors', component: MyDoctorsComponent },
     { path: 'profile', component: ProfileComponent },
 
     // otherwise redirect to home
