@@ -13,9 +13,9 @@ public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 	
 	@Override
-	public User createNewUser(String name, String email, String password) {
-		User user = new User(name, email, password.hashCode());
+	public User createNewUser(String name, String email, String phoneNumber, String street, String city, String state, String password) {
 		if(userRepository.findByEmail(email) == null) {
+			User user = new User(name, email, phoneNumber, street, city, state, password.hashCode());
 			return userRepository.save(user);
 		}
 		return new User();
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User correctCredentials(String email, String password) {
 		User user = userRepository.findByEmail(email);
-		if(user != null && !user.getName().equals("") && user.getPassword() == password.hashCode()) {
+		if(user != null && user.getName() != null && user.getPassword() == password.hashCode()) {
 			return user;
 		}
 		return new User();

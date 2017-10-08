@@ -8,5 +8,31 @@
 body {
     margin: 0px;
     background: #fff;
+    font-family: "Roboto";
 }
 
+.user-type-selection .ui-button.ui-state-default {
+    width: 100px;
+}
+
+.ui-togglebutton.ui-button.ui-state-default, .ui-selectbutton .ui-button.ui-state-default {
+    color: #8BC34A !important; /* 500 */
+}
+
+.ui-togglebutton.ui-button.ui-state-active, .ui-selectbutton .ui-button.ui-state-active {
+    border: 1px solid #689F38 !important; /* 700 */
+    background: #689F38 !important;  /* 700 */
+    color: #F1F8E9 !important;     /* 50 */
+}
+
+.ui-togglebutton.ui-button.ui-state-focus, .ui-selectbutton .ui-button.ui-state-focus.ui-state-active {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26) !important;
+}
+
+.ui-float-label label {
+    color: #888!important;
+}
+
+.ui-inputtext.ui-state-focus, .ui-inputtext:focus {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26) !important;
+}

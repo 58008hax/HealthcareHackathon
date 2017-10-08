@@ -1,8 +1,56 @@
 .login {
-    width: 500px;
-    height: 300px;
+    position: relative;
+    width: 300px;
+
+    margin: 0 auto;
+    margin-top: 80px;
+    border: 1px solid #689F38;    /* 700 */
 }
 
-.login h1 {
-    font-size: 24px;
+.user-type-selection {
+    margin-bottom: 16px;
+}
+
+.username-password {
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 64px;
+    margin-left: 8px;
+    margin-right: 8px;
+    
+}
+
+.username {
+    margin-bottom: 24px;
+}
+
+.username input {
+    width: 100%;
+}
+
+.password input {
+    width: 100%;
+}
+
+.login-button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+}
+
+.login-button button {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    color: #F1F8E9;     /* 50 */
+    font-family: "Roboto";
+    background-color: #689F38; /* 700 */
+    box-shadow: none;
+    border: none;
+}
+
+.login-button button:focus {
+    outline: none;
 }

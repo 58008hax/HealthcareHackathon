@@ -38,7 +38,7 @@ var initHttpServer = () => {
     //app.get('/', (req, res) => res.sendFile(__dirname + '/frontend/src/index.html'));
 
     app.get('/blocks', (req, res) => res.send(JSON.stringify(blockchain)));
-    app.get('/newestBlock', (req, res) => res.send(JSON.stringify(blockchain[blockchain.length -1])));
+    app.get('/newestBlock', (req, res) => res.send(JSON.stringify(getLatestBlock())));
     app.post('/mineBlock', (req, res) => {
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
@@ -50,12 +50,12 @@ var initHttpServer = () => {
         res.send(sockets.map(s => s._socket.remoteAddress + ':' + s._socket.remotePort));
     });
     app.post('/addPeer', (req, res) => {
-        connectToPeers([req.body.peer]);
+        var socketStr = "ws://" + req.connection.remoteAddress + ":6001";
+        addNewPeer(socketStr);
         res.send();
     });
     app.listen(http_port, () => console.log('Listening http on port: ' + http_port));
 };
-
 
 var initP2PServer = () => {
     var server = new WebSocket.Server({port: p2p_port});
@@ -98,7 +98,6 @@ var initErrorHandler = (ws) => {
     ws.on('error', () => closeConnection(ws));
 };
 
-
 var generateNextBlock = (blockData) => {
     var previousBlock = getLatestBlock();
     var nextIndex = previousBlock.index + 1;
@@ -106,7 +105,6 @@ var generateNextBlock = (blockData) => {
     var nextHash = calculateHash(nextIndex, previousBlock.hash, nextTimestamp, blockData);
     return new Block(nextIndex, previousBlock.hash, nextTimestamp, blockData, nextHash);
 };
-
 
 var calculateHashForBlock = (block) => {
     return calculateHash(block.index, block.previousHash, block.timestamp, block.data);
@@ -139,11 +137,19 @@ var isValidNewBlock = (newBlock, previousBlock) => {
 
 var connectToPeers = (newPeers) => {
     newPeers.forEach((peer) => {
-        var ws = new WebSocket(peer);
+        var ws = new WebSocket(newPeers);
         ws.on('open', () => initConnection(ws));
         ws.on('error', () => {
             console.log('connection failed')
         });
+    });
+};
+
+var addNewPeer = (peer) => {
+    var ws = new WebSocket(peer);
+    ws.on('open', () => initConnection(ws));
+    ws.on('error', () => {
+        console.log('failed to add peer');
     });
 };
 
@@ -211,3 +217,104 @@ var broadcast = (message) => sockets.forEach(socket => write(socket, message));
 connectToPeers(initialPeers);
 initHttpServer();
 initP2PServer();
+
+
+//adding some dummy data for the presentation
+var dummyData1 = generateNextBlock({
+    "data": {
+        "patient": {
+            "name": "Matthew Aquiles",
+            "dob": "1995-08-29",
+            "ssn": "123456789",
+            "insuranceProvider": "horizon",
+            "address": "806 Castle Point Terrace",
+            "race": "white",
+            "email": "mattaquiles@gmail.com",
+            "phoneNum": "9082167181",
+            "emergency": {
+                "name": "mom",
+                "phone": "1234567890"
+            },
+            "gender": "male",
+            "fact": "heres a fun fact for ya"
+        },
+        "doctor": {
+            "name": "Johnny Appleseed",
+            "phone": "8008888888",
+            "email": "jappleseed@doctor.com",
+            "workAddr": "1 MD Lane ",
+            "fact": "im not a doctor"
+        },
+        "visits":{
+            "bloodPressure": {
+                "numerator": 120,
+                "denominator": 80   
+            },
+            "height": 72,
+            "weight": 175,
+            "temperature": 98.6,
+            "notes": "lookin gud",
+            "date": "2017-10-8",
+            "symptoms": "ok",
+            "diagnosis": "healthy",
+            "meds": {
+                "frequency": "weekly",
+                "duration": "2 months",
+                "dosage": "5mg",
+                "notes": "take in the morning"
+            },
+            "isEdit": 0
+        }
+    }
+});
+addBlock(dummyData1);
+
+var dummyData2 = generateNextBlock({
+    "data": {
+        "patient": {
+            "name": "Matthew Aquiles",
+            "dob": "1995-08-29",
+            "ssn": "123456789",
+            "insuranceProvider": "horizon",
+            "address": "806 Castle Point Terrace",
+            "race": "white",
+            "email": "mattaquiles@gmail.com",
+            "phoneNum": "9082167181",
+            "emergency": {
+                "name": "mom",
+                "phone": "1234567890"
+            },
+            "gender": "male",
+            "fact": "heres a fun fact for ya"
+        },
+        "doctor": {
+            "name": "Johnny Appleseed",
+            "phone": "8008888888",
+            "email": "jappleseed@doctor.com",
+            "workAddr": "1 MD Lane ",
+            "fact": "im not a doctor"
+        },
+        "visits":{
+            "bloodPressure": {
+                "numerator": 120,
+                "denominator": 80   
+            },
+            "height": 72,
+            "weight": 185,
+            "temperature": 98.6,
+            "notes": "lookin ok",
+            "date": "2017-10-8",
+            "symptoms": "ok",
+            "diagnosis": "healthy",
+            "meds": {
+                "frequency": "weekly",
+                "duration": "2 months",
+                "dosage": "5mg",
+                "notes": "take in the morning"
+            },
+            "isEdit": 0
+        }
+    }
+});
+addBlock(dummyData2);
+
