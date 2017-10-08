@@ -45,7 +45,6 @@
 }
 .indent{
   padding-left: 20px;
-  font-size: .95em;
 }
 .usenotes{
   margin-top: 10px;
@@ -53,4 +52,7 @@
 .modal-title{
   font-size: 2em;
   border-bottom: 1px solid #558B2F;
+}
+.labels{
+    font-size: .8em;
 }
