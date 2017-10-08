@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="patient_home.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <title>New Patient</title>
 </head>
 
@@ -63,6 +64,7 @@
             <div>
                 <label for="race">Race: </label>
                 <select id="race" name="user_race">
+                    <option value="blank"></option>
                     <option value="american indian or alaska native">American Indian or Alaska Native</option>
                     <option value="asian">Asian</option>
                     <option value="black or african american">Black or African American</option>
@@ -79,7 +81,7 @@
                 <input type="text" id="funfact" name="user_funfact">
             </div>
             <div class="button">
-                <button type="submit" onclick="return resetForm()" href="patient_home.html">Submit</button>
+                <button type="submit" onclick="return resetForm()" formaction="patient_home.html">Submit</button>
             </div>
 
         </form>
@@ -92,6 +94,9 @@
                     switch (inputs[i].type) {
                         // case 'hidden':
                         case 'text':
+                        case 'number':
+                        case 'email':
+                        case 'date':
                             inputs[i].value = '';
                             break;
                         case 'radio':
@@ -100,21 +105,16 @@
                     }
                 }
 
-                // clearing selects
-                var selects = form.getElementsByTagName('select');
-                for (var i = 0; i < selects.length; i++)
-                    selects[i].selectedIndex = 0;
-
-                // clearing textarea
-                var text = form.getElementsByTagName('textarea');
-                for (var i = 0; i < text.length; i++)
-                    text[i].innerHTML = '';
-
                 return false;
             }
+
         </script>
 
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 </body>
 
