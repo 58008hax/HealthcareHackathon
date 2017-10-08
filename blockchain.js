@@ -353,18 +353,21 @@ var dummyData2 = generateNextBlock({
             "symptoms": "cough",
             "diagnosis": "flu",
             "meds": [{
+                "name": "ridalin",
                 "frequency": "daily",
                 "duration": "3 months",
                 "dosage": "5mg",
                 "notes": "take morning and night with food"
             },
                 {
+                "name": "drugxyz",
                 "frequency": "daily",
                 "duration": "6 months",
                 "dosage": "2mg",
                 "notes": "take morning and night with food"
                 },
                 {
+                "name": "sdjfbv",
                 "frequency": "weekly",
                 "duration": "1 year",
                 "dosage": "20mg",

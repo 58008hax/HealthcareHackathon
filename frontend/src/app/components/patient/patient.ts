@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DataService } from '../../services/data.service';
 
@@ -13,8 +14,9 @@ export class PatientComponent {
   pData:any;
   lastVisit:any;
   patientName:string = "Patient Name";
+  currentMeds:any;
 
-  constructor (private dataService:DataService) {
+  constructor (public router:Router, private dataService:DataService) {
     if (this.dataService.loginPatientData != null) {
       this.userId = this.dataService.loginPatientData.userId;
       this.userType = "Patient";
@@ -25,11 +27,16 @@ export class PatientComponent {
       this.pData = this.dataService.searchData;
       this.patientName = this.pData["patient"]["name"];
       this.lastVisit = this.pData["visits"][this.pData["visits"].length - 1];
+      this.currentMeds = this.lastVisit["meds"];
       console.log(this.pData);
       console.log(this.lastVisit);
     } else {
       console.log("Woops, something went wrong with searchData.");
     }
+  }
+
+  newVisit() {
+    this.router.navigate(["/newVisit"]);
   }
 }
   

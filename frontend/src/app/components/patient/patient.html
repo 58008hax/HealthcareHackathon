@@ -110,7 +110,30 @@
         </p-accordionTab>
         <p-accordionTab header="Medication History">
             <!--All Medication History for patient.-->
-
+            <div class="drop-down-info">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td>{{currentMeds["name"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Frequency</th>
+                        <td>{{currentMeds["frequency"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>{{currentMeds["duration"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Dosage</th>
+                        <td>{{currentMeds["dosage"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Notes</th>
+                        <td>{{currentMeds["notes"]}}</td>
+                    </tr>
+                </table>
+            </div>
         </p-accordionTab>
         <!--
         <p-accordionTab header="Vaccine/Shot History">
@@ -125,5 +148,29 @@
 
     <div class="current-meds">
         <h2>Current Medications:</h2>
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{currentMeds["name"]}}</td>
+                </tr>
+                <tr>
+                    <th>Frequency</th>
+                    <td>{{currentMeds["frequency"]}}</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>{{currentMeds["duration"]}}</td>
+                </tr>
+                <tr>
+                    <th>Dosage</th>
+                    <td>{{currentMeds["dosage"]}}</td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td>{{currentMeds["notes"]}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
