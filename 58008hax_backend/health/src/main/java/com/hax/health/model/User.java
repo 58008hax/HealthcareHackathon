@@ -5,15 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class User {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 
-    private String name;
+	private String name;
+	private String email;
+	private Integer password;
 
-    private String email;
+	public User() {
+	}
+
+	public User(String name, String email, Integer password) {
+		this.name = name;
+		this.email = email;
+		this.password = password;
+	}
 
 	public Integer getId() {
 		return id;
@@ -39,5 +48,24 @@ public class User {
 		this.email = email;
 	}
 
+	public Integer getPassword() {
+		return password;
+	}
+
+	public void setPassword(Integer password) {
+		this.password = password;
+	}
+
+	public boolean equals(User user) {
+		if (this.email.equals(user.getEmail()) && this.password.equals(user.getPassword())) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + "]";
+	}
 
 }
