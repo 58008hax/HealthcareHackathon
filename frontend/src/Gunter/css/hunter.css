@@ -56,3 +56,6 @@
 .labels{
     font-size: .8em;
 }
+.inline{
+  display: inline;
+}
