@@ -27,27 +27,31 @@ export class HttpService {
     getLastestBlock() {
         return this.http.get(this.blockUrl + '/newestBlock').map((res:Response) => res.json());
     }
-    
-    addNewVisitBlock(symptoms, bloodPressureO, bloodPressureU, height, weight, temperature, testsRun, diagnosisNotes, medName, dosage, pillCountBottle, freqPillsAmount, freqPillsPerDay, freqPillsNotes, treatmentDurNum, treatmentDurType) {
-        var data = {};
-        data["data"] = {};
-        data["data"]["Data Type"] = "New Visit";
-        data["data"]["Symptoms"] = symptoms;
-        data["data"]["Blood Pressure"] = "" + bloodPressureO + " / " + bloodPressureU;
-        data["data"]["Height"] = height;
-        data["data"]["Weight"] = weight;
-        data["data"]["Temperature"] = temperature;
-        data["data"]["Tests Run"] = testsRun;
-        data["data"]["Diagnosis Notes"] = diagnosisNotes;
-        data["data"]["Medicine Name"] = medName;
-        data["data"]["Dosage"] = dosage;
-        data["data"]["Pill Count Per Bottle"] = pillCountBottle;
-        data["data"]["Frequency Pill Count"] = freqPillsAmount;
-        data["data"]["Frequency Pill Per Day"] = freqPillsPerDay;
-        data["data"]["Frequency Pill Notes"] = freqPillsNotes;
-        data["data"]["Treatment Duration"] = treatmentDurNum;
-        data["data"]["Treatment Duration Type"] = treatmentDurType;
-        
+
+    addNewVisitBlock(oldData, symptoms, bloodPressureO, bloodPressureU, height, weight, temperature, testsRun, diagnosisNotes, medName, dosage, pillCountBottle, freqPillsAmount, freqPillsPerDay, freqPillsNotes, treatmentDurNum, treatmentDurType) {
+
+        var data = JSON.parse(oldData);
+        data["data"]["visits"]["Data Type"] = "New Visit";
+        data["data"]["visits"]["symptoms"] = symptoms;
+        data["data"]["visits"]["bloodPressure"]["numerator"] = bloodPressureO;
+        data["data"]["visits"]["bloodPressure"]["denominator"] = bloodPressureU;
+        data["data"]["visits"]["height"] = height;
+        data["data"]["visits"]["weight"] = weight;
+        data["data"]["visits"]["temperature"] = temperature;
+        data["data"]["visits"]["testsRun"] = testsRun;
+        data["data"]["visits"]["diagnosis"] = diagnosisNotes;
+        data["data"]["visits"]["date"] = new Date();
+        data["data"]["visits"]["meds"]["name"] = medName;
+        data["data"]["visits"]["meds"]["dosage"] = dosage;
+        data["data"]["visits"]["meds"]["pillCountPerBottle"] = pillCountBottle;
+        data["data"]["visits"]["meds"]["frequencyPillCount"] = freqPillsAmount;
+        data["data"]["visits"]["meds"]["frequencyPillPerDay"] = freqPillsPerDay;
+        data["data"]["visits"]["meds"]["notes"] = freqPillsNotes;
+        data["data"]["visits"]["meds"]["duration"] = treatmentDurNum;
+        data["data"]["visits"]["durationType"] = treatmentDurType;
+
         return this.http.post('http://54.242.237.38:3001/mineBlock', JSON.stringify(data)).map((res:Response) => res.json());
+
     }
+
 }
