@@ -17,7 +17,8 @@
 .scan {
     position: relative;
     float: left;
-    border: 1px solid black;
+    border: 1px solid #689F38;
+    border-radius: 5px;
     height: 250px;
     width: 200px;
 }
@@ -65,7 +66,8 @@
 .manual {
     position: relative;
     float: right;
-    border: 1px solid black;
+    border: 1px solid #689F38;
+    border-radius: 5px;
     height: 250px;
     width: 200px;
 }
@@ -76,7 +78,12 @@
 }
 
 .manual-input input {
+    margin-top: 25%;
     font-size: 18px;
+    width: 94%;
+    text-align: center;
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .manual-input input:focus {
