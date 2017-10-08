@@ -6,15 +6,17 @@ import { LoginComponent } from './components/login/login';
 import { MyPatientsComponent } from './components/myPatients/myPatients';
 import { MyDoctorsComponent } from './components/myDoctors/myDoctors';
 import { ProfileComponent } from './components/profile/profile';
+import { SignUpComponent } from './components/signUp/signUp';
 
 const appRoutes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'login', component: LoginComponent },
     { path: 'search', component: SearchComponent },
-    { path: 'mypatients', component: MyPatientsComponent },
+    { path: 'myPatients', component: MyPatientsComponent },
     { path: 'patient', component: PatientComponent },
-    { path: 'mydoctors', component: MyDoctorsComponent },
+    { path: 'myDoctors', component: MyDoctorsComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'signUp', component: SignUpComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
