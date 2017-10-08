@@ -4,7 +4,6 @@
     text-align: center;
     padding: 10px, 4px, 9px, 4px;
     font-size: 40px;
-    font-family: 'Roboto', sans-serif;
 }
 
 #info {
@@ -12,7 +11,6 @@
     padding-right: 15%;
     margin-top: 60px;
     margin-bottom: 50px;
-    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -79,11 +77,11 @@ p.accordion.active:after {
     -moz-border-radius: 10px 10px 0 0;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-    font-family: 'Roboto', sans-serif;
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
     border: 1px solid #689f38;
+    font-family: 'Roboto', sans-serif;
 }
 .form-style-10 h1 > span{
     display: block;
@@ -171,8 +169,8 @@ p.accordion.active:after {
     border: 1px solid #257C9E;
     font-size: 15px;
 }
-.form-style-10 input[type="button"]:hover, 
-.form-style-10 input[type="submit"]:hover{
+.form-style-10 button[type="button"]:hover, 
+.form-style-10 button[type="submit"]:hover{
     background: #689f38;
     -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
     -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.28);
