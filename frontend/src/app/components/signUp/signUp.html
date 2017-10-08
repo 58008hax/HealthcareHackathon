@@ -1,1 +1,54 @@
 <app-header></app-header>
+
+<section id="info" style="margin-top: 120px;">
+        
+        <div class="form-style-10">
+            <h1>Please fill in the following information to continue</h1>
+            <form id="target">
+                <div class="section"><span>1</span>First Name &amp; Address</div>
+                <div class="inner-wrap">
+                    <label>Your Full Name <input type="text" id="name" name="field1" /></label>
+                    <label>Address <input type="text" id="street" name="field2"/></label>
+                    <label>City <input type="text" id="city" name="field1"/></label>
+                    <label>Sate <input type="text" id="state" name="field1"/></label>
+                </div>
+
+                <div class="section"><span>2</span>Email &amp; Phone</div>
+                <div class="inner-wrap">
+                    <label>Email Address <input type="email" id="mail" name="field3" /></label>
+                    <label>Phone Number <input type="text" id="phone" name="field4" /></label>
+                </div>
+
+                <div class="section"><span>3</span>Passwords</div>
+                <div class="inner-wrap">
+                    <label>Password <input type="password" id="password" name="field5" /></label>
+                    <label>Confirm Password <input type="password" id="confirm_pass" name="field6" onchange="checkPasswordMatch();" /></label>
+                    <div class="registrationFormAlert" id="divCheckPasswordMatch">
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <input type="submit" class="button"/>
+                </div>
+            </form>
+        </div>
+
+        <script src="js/patient_new.js" type="text/javascript"></script>
+
+        <script language="JavaScript" type="text/javascript">
+            function checkPasswordMatch() {
+                var password = $("#password").val();
+                var confirmPassword = $("#confirm_pass").val();
+
+                if (password != confirmPassword)
+                    $("#divCheckPasswordMatch").html("Passwords do not match!");
+                else
+                    $("#divCheckPasswordMatch").html("Passwords match.");
+            }
+
+            $(document).ready(function() {
+                $("#password, #confirm_pass").keyup(checkPasswordMatch);
+            });
+
+        </script>
+    </section>
