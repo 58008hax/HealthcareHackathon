@@ -1,4 +1,19 @@
-/* Style the buttons that are used to open and close the accordion panel */
+#banner {
+    background-color: #6ec5ff;
+    color: black;
+    text-align: center;
+    padding: 10px, 4px, 9px, 4px;
+    font-size: 40px
+}
+
+#info {
+    padding-left: 15%;
+    padding-right: 15%;
+
+}
+
+
+
 p.accordion {
     background-color: #2195f2;
     color: #000;
@@ -41,3 +56,50 @@ div.panel.show {
     opacity: 1;
     max-height: 500px;
 }
+
+form {
+    margin: auto;
+    width 400px;
+    padding 1em;
+    border: 1px solid black;
+    border-radius: 1em;
+}
+
+form div + div {
+    margin-top: .5em;
+}
+
+label {
+    font: 1em;
+    margin-top: 10px;
+    margin-left:10px;
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+}
+
+input, textarea {
+
+    width 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+}
+
+.button {
+    padding-left: 560px;
+    padding-bottom: 5px;
+}
+
+button {
+    margin-left: .5em;
+}
+

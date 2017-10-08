@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="patient_home.css" />
+    <title>New Patient</title>
+</head>
+
+<body>
+    <section id="banner">
+        Check YoSelf
+    </section>
+
+    <section id="info">
+        <h1>Please enter your data to continue</h1>
+
+        <form method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="mail">E-mail:</label>
+                <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="number" id="phone" name="user_phone">
+            </div>
+            <div>
+                <label><u>Address</u></label><br>
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="user_street"><br>
+                <label for="city">City:</label>
+                <input type="text" id="city" name="user_city"><br>
+                <label for="state">State:</label>
+                <input type="text" id="state" name="user_state">
+            </div>
+            <div>
+                <label for="ssn">Social Security Number:</label>
+                <input type="number" id="ssn" name="user_ssn">
+            </div>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="user_dob">
+            </div>
+            <div>
+                <label for="height">Height (in):</label>
+                <input type="number" id="height" name="user_height">
+            </div>
+            <div>
+                <label for="weight">Weight (lb):</label>
+                <input type="number" id="weight" name="user_weight">
+            </div>
+            <div>
+                <label for="gender">Gender:</label>
+                <input type="radio" id="gender" name="user_gender" value="male">Male
+                <input type="radio" id="gender" name="user_gender" value="female">Female
+                <input type="radio" id="gender" name="user_gender" value="other">Other<br>
+            </div>
+            <div>
+                <label for="race">Race: </label>
+                <select id="race" name="user_race">
+                    <option value="american indian or alaska native">American Indian or Alaska Native</option>
+                    <option value="asian">Asian</option>
+                    <option value="black or african american">Black or African American</option>
+                    <option value="native hawaiian or pacific islander">Native Hawaiian or Pacific Islander</option>
+                    <option value="white">White</option>
+                </select>
+            </div>
+            <div>
+                <label for="healthcare">Healthcare Provider:</label>
+                <input type="text" id="healthcare" name="user_healthcare">
+            </div>
+            <div>
+                <label for="funfact">Fun Fact:</label>
+                <input type="text" id="funfact" name="user_funfact">
+            </div>
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>

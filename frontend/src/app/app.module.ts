@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import { PatientComponent } from './components/patient/patient';
 import { AccordionModule } from 'primeng/primeng';
 
+import {InputTextModule} from 'primeng/primeng';
+
 import { AppComponent } from './app.component';
 
 const appRoutes: Routes = [
@@ -27,6 +29,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     AccordionModule,
+    InputTextModule,
     BrowserAnimationsModule
   ],
   providers: [],
