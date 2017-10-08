@@ -14,60 +14,96 @@
                     </tr>
                     <tr>
                         <th>DoB</th>
-                        <td></td>
+                        <td>{{pData["patient"]["dob"]}}</td>
                     </tr>
                     <tr>
                         <th>Address</th>
-                        <td></td>
+                        <td>{{pData["patient"]["address"]}}</td>
                     </tr>
                     <tr>
                         <th>SSN</th>
-                        <td></td>
+                        <td>{{pData["patient"]["ssn"]}}</td>
                     </tr>
                     <tr>
                         <th>Race</th>
-                        <td></td>
+                        <td>{{pData["patient"]["race"]}}</td>
                     </tr>
                     <tr>
                         <th>Gender</th>
-                        <td></td>
+                        <td>{{pData["patient"]["gender"]}}</td>
                     </tr>
                     <tr>
                         <th>Height</th>
-                        <td></td>
+                        <td>{{lastVisit["height"]}}</td>
                     </tr>
                     <tr>
                         <th>Weight</th>
-                        <td></td>
+                        <td>{{lastVisit["weight"]}}</td>
                     </tr>
                     <tr>
                         <th>Email</th>
-                        <td></td>
+                        <td>{{pData["patient"]["email"]}}</td>
                     </tr>
                     <tr>
                         <th>Phone</th>
-                        <td></td>
+                        <td>{{pData["patient"]["phoneNum"]}}</td>
                     </tr>
                     <tr>
                         <th>Healthcare</th>
-                        <td></td>
+                        <td>{{pData["patient"]["insuranceProvider"]}}</td>
                     </tr>
                     <tr>
                         <th>Fun Fact</th>
-                        <td></td>
+                        <td>{{pData["patient"]["fact"]}}</td>
                     </tr>
                     <tr>
                         <th>Emergency Contact</th>
-                        <td></td><!--Name-->
+                        <td>{{pData["patient"]["emergency"]["name"]}}</td><!--Name-->
                     </tr>
                     <tr>
-                        <td></td><!--Phone-->
+                        <th></th>
+                        <td>{{pData["patient"]["emergency"]["phone"]}}</td><!--Phone-->
                     </tr>
                 </table>
             </div>
         </p-accordionTab>
         <p-accordionTab header="Current Status">
-            
+            <div class="drop-down-info">
+                <table>
+                    <tr>
+                        <th>Last Visit</th>
+                        <td>{{lastVisit["date"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Blood Pressure</th>
+                        <td>{{lastVisit["bloodPressure"]["numerator"]}} / {{lastVisit["bloodPressure"]["denometer"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Height</th>
+                        <td>{{lastVisit["height"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Weight</th>
+                        <td>{{lastVisit["weight"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Temperature</th>
+                        <td>{{lastVisit["temperature"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Symptoms</th>
+                        <td>{{lastVisit["symptoms"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>Diagnosis</th>
+                        <td>{{lastVisit["diagnosis"]}}</td>
+                    </tr>
+                    <tr>
+                        <th>General Notes</th>
+                        <td>{{lastVisit["notes"]}}</td>
+                    </tr>
+                </table>
+            </div>
         </p-accordionTab>
         <p-accordionTab header="Medication History">
             <!--All Medication History for patient.-->

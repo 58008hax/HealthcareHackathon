@@ -11,6 +11,8 @@ export class PatientComponent {
   userId;
   userType:string;
   pData:any;
+  lastVisit:any;
+  patientName:string = "Patient Name";
 
   constructor (private dataService:DataService) {
     if (this.dataService.loginPatientData != null) {
@@ -21,7 +23,12 @@ export class PatientComponent {
 
     if (this.dataService.searchData != null) {
       this.pData = this.dataService.searchData;
+      this.patientName = this.pData["patient"]["name"];
+      this.lastVisit = this.pData["visits"][this.pData["visits"].length - 1];
       console.log(this.pData);
+      console.log(this.lastVisit);
+    } else {
+      console.log("Woops, something went wrong with searchData.");
     }
   }
 }

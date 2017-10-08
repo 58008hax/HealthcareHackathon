@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HttpService {
     loginUrl:string = "http://54.242.237.38:8080";
-    blockUrl:string = "http://localhost:3001";
+    blockUrl:string = "http://54.242.237.38:3001";
 
     constructor(private http:Http) {}
 

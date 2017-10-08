@@ -44,6 +44,8 @@ span.ui-button-text.ui-clickable {
 }
 
 .ui-accordion {
+    float: left !important;
     margin-top: 16px !important;
     width: 50% !important;
+    font-size: 18px !important;
 }

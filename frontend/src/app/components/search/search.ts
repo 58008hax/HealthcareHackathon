@@ -26,8 +26,8 @@ export class SearchComponent {
 
     searchPatient() {
         this.httpService.getLastestBlock().subscribe((result) => {
-            console.log(result.data);
-            this.dataService.searchData = result.data;
+            //console.log(result.data);
+            this.dataService.searchData = result.data.data;
             this.router.navigate(["/patient"]);
         });
     }

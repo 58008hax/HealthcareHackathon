@@ -22,6 +22,7 @@ import { MyDoctorsComponent } from './components/myDoctors/myDoctors';
 import { ProfileComponent } from './components/profile/profile';
 import { HeaderComponent } from './components/header/header';
 import { SignUpComponent } from './components/signUp/signUp';
+import { NewVisitComponent } from './components/newVisits/newVisits';
 
 import { DataService } from './services/data.service';
 import { HttpService } from './services/http.service';
