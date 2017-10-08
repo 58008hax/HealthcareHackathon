@@ -6,16 +6,66 @@
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="patient_home.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="js/patient_new.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
     <title>New Patient</title>
 </head>
 
 <body>
-    <section id="banner">
-        Check YoSelf
-    </section>
 
     <section id="info">
+
+        <div class="form-style-10">
+            <h1>Please fill in the following information to continue</h1>
+            <form id="target">
+                <div class="section"><span>1</span>First Name &amp; Address</div>
+                <div class="inner-wrap">
+                    <label>Your Full Name <input type="text" id="name" name="field1" /></label>
+                    <label>Address <input type="text" id="street" name="field2"/></label>
+                    <label>City <input type="text" id="city" name="field1"/></label>
+                    <label>Sate <input type="text" id="state" name="field1"/></label>
+                </div>
+
+                <div class="section"><span>2</span>Email &amp; Phone</div>
+                <div class="inner-wrap">
+                    <label>Email Address <input type="email" id="mail" name="field3" /></label>
+                    <label>Phone Number <input type="text" id="phone" name="field4" /></label>
+                </div>
+
+                <div class="section"><span>3</span>Passwords</div>
+                <div class="inner-wrap">
+                    <label>Password <input type="password" id="password" name="field5" /></label>
+                    <label>Confirm Password <input type="password" id="confirm_pass" name="field6" onchange="checkPasswordMatch();" /></label>
+                    <div class="registrationFormAlert" id="divCheckPasswordMatch">
+                    </div>
+                </div>
+
+                <div class="button-section">
+                    <input type="submit" class="button"/>
+                </div>
+            </form>
+        </div>
+
+        <script src="js/patient_new.js" type="text/javascript"></script>
+
+        <script language="JavaScript" type="text/javascript">
+            function checkPasswordMatch() {
+                var password = $("#password").val();
+                var confirmPassword = $("#confirm_pass").val();
+
+                if (password != confirmPassword)
+                    $("#divCheckPasswordMatch").html("Passwords do not match!");
+                else
+                    $("#divCheckPasswordMatch").html("Passwords match.");
+            }
+
+            $(document).ready(function() {
+                $("#password, #confirm_pass").keyup(checkPasswordMatch);
+            });
+
+        </script>
+
+        <!--
         <h1>Please enter your data to continue</h1>
 
         <form name="new_user">
@@ -47,8 +97,9 @@
                 <input type="password" id="confirm_pass" name="confirm_pass" id="confirm_pass" onchange="check_pass()">
                 <p id="validate-status"></p>
             </div>
+-->
 
-            <!--
+        <!--
             <div>
                 <label for="ssn">Social Security Number:</label>
                 <input type="number" id="ssn" name="user_ssn">
@@ -91,31 +142,24 @@
                 <input type="text" id="funfact" name="user_funfact">
             </div>
 -->
+        <!--
             <div>
                 <button class="button clear" type="reset" onclick="document.getElementById('new_user').reset()">Clear</button>
                 <button class="button submit" type="submit" name="submit" id="target" disabled>Submit</button>
             </div>
 
-            <script>
-                function check_pass() {
-                    if (document.getElementById('password').value ==
-                        document.getElementById('confirm_pass').value) {
-                        document.getElementById('target').disabled = false;
-                    } else {
-                        document.getElementById('submit').disabled = true;
-                    }
-                }
 
-            </script>
+        
 
         </form>
 
 
     </section>
+-->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 </body>
 

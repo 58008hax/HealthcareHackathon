@@ -1,0 +1,58 @@
+.ex {
+  right: 0;
+  top: 10%;
+  height: 30px;
+  width: 30px;
+  opacity: 1;
+  font-size: 30px;
+  line-height: 30px;
+  transition: all 0.8s;
+  border: 1px solid transparent;
+  text-align: center;
+}
+.ex:hover {
+  border-radius: 50%;
+  background: tomato;
+  border: 1px solid black;
+}
+.add {
+  right: 0;
+  top: 10%;
+  height: 30px;
+  width: 30px;
+  opacity: 1;
+  font-size: 30px;
+  line-height: 30px;
+  transition: all 0.8s;
+  border: 1px solid transparent;
+  text-align: center;
+}
+.add:hover {
+  border-radius: 50%;
+  background: green;
+  border: 1px solid black;
+}
+.boxed {
+  width: 300px;;
+  border: 1px solid ;
+  padding: 10px;
+  border-radius: 5px;
+    border-color: #558B2F;
+}
+.headers{
+  width: 300px;
+  border-bottom: 1px solid #558B2F;
+}
+.indent{
+  padding-left: 20px;
+}
+.usenotes{
+  margin-top: 10px;
+}
+.modal-title{
+  font-size: 2em;
+  border-bottom: 1px solid #558B2F;
+}
+.labels{
+    font-size: .8em;
+}
