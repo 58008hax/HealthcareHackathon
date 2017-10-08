@@ -44,154 +44,151 @@
                         </div>
 
                         <div class="modal-body">
-                            <div class="form-group">
-                                <div class="col-xs-6">
+                            
+                                <div class="demo">
+                                    <div class="control-group">
+                                        <div class="headers">
+                                            <label for="select-state">Symptoms</label>
+                                        </div>
+                                        <br>
+                                        <select id="select-symptoms" name="symptoms[]" multiple class="demo-default" style="width: 300px" placeholder="Select symptoms...">
+                                            <option value="">Select symptoms...</option>
+                                            <option value = "Joint Pain">Joint Pain</option>
+                                            <option value = "Fatigue">Fatigue</option>
+                                            <option value = "Nasuea">Nasuea</option>
+                                            <option value = "Swelling">Swelling</option>
+                                            <option value = "Cough">Cough</option>
+                                            <option value = "Arthritis">Arthritis</option>
+                                            <option value = "Fever">Fever</option>
+                                            <option value = "Redness">Redness</option>
+                                            <option value = "Itchy">Itchy</option>
+                                            <option value = "Sore Throat">Sore Throat</option>
+                                            <option value = "Runny Nose">Runny Nose</option>
+                                            <option value = "Diarrhea">Diarrhea</option>
+                                            <option value = "Constipation">Constipation</option>
+                                            <option value = "Achy">Achy</option>
+
+                                        </select>
+                                    </div>
+                                    <script>
+                                        $('#select-symptoms').selectize({
+                                            maxItems: 50,
+                                            plugins: {'item_color': {colorField: 'black'}}
+                                        });
+                                    </script>
+                                </div>
+                                <br>
+                                <div class="headers">
+                                    <label>Examination and Tests</label>
+                                </div>
+                                <br>
+                                <div class="indent">
+                                    <label class="labels">Blood Pressure</label>
+                                    <div class='Option'><input type='text' name='blood_pressure_num' style="width: 50px;" placeholder="120"/> <b>/</b> <input type='text' name='blood_pressure_den' style="width: 50px;" placeholder="80"/></div>
+
+                                    <br>
+
+                                    <label class="labels">Height (Inches)</label>
+                                    <div class='Option'><input style="padding-right:10px; text-align:left; width: 175px" placeholder="ex: 72"><span style="margin-left:-20px;">in.</span></div>
+
+                                    <br>
+
+                                    <label class="labels">Weight (lbs)</label>
+                                    <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 150"><span style="margin-left:-20px;">lbs</span></div>
+
+                                    <br>
+
+                                    <label class="labels">Temperature (&deg;F)</label>
+                                    <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 98.6"><span style="margin-left:-20px;">&deg;F</span></div>
+
+                                    <br>
+
                                     <div class="demo">
                                         <div class="control-group">
-                                            <div class="headers">
-                                                <label for="select-state">Symptoms</label>
-                                            </div>
-                                            <br>
-                                            <select id="select-symptoms" name="symptoms[]" multiple class="demo-default" style="width: 300px" placeholder="Select symptoms...">
-                                                <option value="">Select symptoms...</option>
-                                                <option value = "Joint Pain">Joint Pain</option>
-                                                <option value = "Fatigue">Fatigue</option>
-                                                <option value = "Nasuea">Nasuea</option>
-                                                <option value = "Swelling">Swelling</option>
-                                                <option value = "Cough">Cough</option>
-                                                <option value = "Arthritis">Arthritis</option>
-                                                <option value = "Fever">Fever</option>
-                                                <option value = "Redness">Redness</option>
-                                                <option value = "Itchy">Itchy</option>
-                                                <option value = "Sore Throat">Sore Throat</option>
-                                                <option value = "Runny Nose">Runny Nose</option>
-                                                <option value = "Diarrhea">Diarrhea</option>
-                                                <option value = "Constipation">Constipation</option>
-                                                <option value = "Achy">Achy</option>
-
+                                            <label for="select-state" class="labels">Tests Run</label>
+                                            <select id="select-tests" name="tests[]" multiple class="demo-default" style="width:75%" placeholder="Select tests...">
+                                                <option value="">Select tests...</option>
+                                                <option value = "Electrocardiogram (ECG)">Electrocardiogram (ECG)</option>
+                                                <option value = "Holter monitoring">Holter monitoring</option>
+                                                <option value = "Stress test">Stress test</option>
+                                                <option value = "Cardiac catheterization">Cardiac catheterization</option>
+                                                <option value = "CT Scan">CT Scan</option>
+                                                <option value = "MRI">MRI</option>
+                                                <option value = "CAT Scan">CAT Scan</option>
                                             </select>
                                         </div>
                                         <script>
-                                            $('#select-symptoms').selectize({
-                                                maxItems: 50,
-                                                plugins: {'item_color': {colorField: 'black'}}
+                                            $('#select-tests').selectize({
+                                                maxItems: 50
                                             });
                                         </script>
                                     </div>
                                     <br>
-                                    <div class="headers">
-                                        <label>Examination and Tests</label>
-                                    </div>
+                                </div>
+                                <div class="headers">
+                                    <label>Diagnosis</label>
+                                </div>
+                                <br>
+                                <div class='Option'>
+                                    <textarea name="Doc_notes" cols="40" rows="3" placeholder="Doctor Notes"></textarea>
+                                </div>
+                                <br>
+                                <div class="headers">
+                                    <label>Medication</label>
+                                </div>
+                                <br>
+                                <div class="indent">
+                                    <label class="labels">Medication Name</label>
+                                    <div class='Option'><input type='text' name='med_name' placeholder="ex: Acetaminophen"/></div>
+
                                     <br>
-                                    <div class="indent">
-                                        <label class="labels">Blood Pressure</label>
-                                        <div class='Option'><input type='text' name='blood_pressure_num' style="width: 50px;" placeholder="120"/> <b>/</b> <input type='text' name='blood_pressure_den' style="width: 50px;" placeholder="80"/></div>
 
-                                        <br>
+                                    <label class="labels">Dosage (mg)</label>
+                                    <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 20"><span style="margin-left:-23px;">mg</span></div>
 
-                                        <label class="labels">Height (Inches)</label>
-                                        <div class='Option'><input style="padding-right:10px; text-align:left; width: 175px" placeholder="ex: 72"><span style="margin-left:-20px;">in.</span></div>
+                                    <br>
 
-                                        <br>
+                                    <label class="labels">Pill Count</label>
+                                    <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 60"><span style="margin-left:-65px;">pills/bottle</span></div>
 
-                                        <label class="labels">Weight (lbs)</label>
-                                        <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 150"><span style="margin-left:-20px;">lbs</span></div>
+                                    <br>
 
-                                        <br>
+                                    <label class="labels">Frequency of Use</label>
+                                    <div class='Option'><input style="text-align:left; width: 35px" placeholder="ex: 2"><span style="margin-left:2px; margin-right: 2px;"> pills </span><input style="text-align:left; width: 35px" placeholder="ex: 2"> <span style="margin-left:2px; margin-right: 2px;"><b>&times;</b> per day</span>
+                                        <textarea style="display:block" class="usenotes" name="Usage_notes" cols="40" rows="3" placeholder="Usage Notes" style="width: 275px;"></textarea></div>
 
-                                        <label class="labels">Temperature (&deg;F)</label>
-                                        <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 98.6"><span style="margin-left:-20px;">&deg;F</span></div>
+                                    <br>
 
-                                        <br>
+                                    <label class="labels">Treatment Duration</label>
+                                    <div class='Option'>
+                                        <input type='text' name='temperature' placeholder="ex: 3" style="width: 35px;"/>
 
                                         <div class="demo">
                                             <div class="control-group">
-                                                <label for="select-state" class="labels">Tests Run</label>
-                                                <select id="select-tests" name="tests[]" multiple class="demo-default" style="width:75%" placeholder="Select tests...">
+                                                <select id="select-duration" name="duration" multiple class="demo-default" style="width:140px;" placeholder="Select duration...">
                                                     <option value="">Select tests...</option>
-                                                    <option value = "Electrocardiogram (ECG)">Electrocardiogram (ECG)</option>
-                                                    <option value = "Holter monitoring">Holter monitoring</option>
-                                                    <option value = "Stress test">Stress test</option>
-                                                    <option value = "Cardiac catheterization">Cardiac catheterization</option>
-                                                    <option value = "CT Scan">CT Scan</option>
-                                                    <option value = "MRI">MRI</option>
-                                                    <option value = "CAT Scan">CAT Scan</option>
+                                                    <option value = "Days">Day(s)</option>
+                                                    <option value = "Weeks">Week(s)</option>
+                                                    <option value = "Months">Month(s)</option>
+                                                    <option value = "Years">Year(s)</option>
                                                 </select>
                                             </div>
                                             <script>
-                                                $('#select-tests').selectize({
-                                                    maxItems: 50
+                                                $('#select-duration').selectize({
+                                                    maxItems: 1
                                                 });
                                             </script>
                                         </div>
-                                        <br>
-                                    </div>
-                                    <div class="headers">
-                                    <label>Diagnosis</label>
-                                    </div>
-                                    <br>
-                                    <div class='Option'>
-                                        <textarea name="Doc_notes" cols="40" rows="3" placeholder="Doctor Notes"></textarea>
-                                        </div>
-                                    <br>
-                                    <div class="headers">
-                                        <label>Medication</label>
-                                    </div>
-                                    <br>
-                                    <div class="indent">
-                                        <label class="labels">Medication Name</label>
-                                        <div class='Option'><input type='text' name='med_name' placeholder="ex: Acetaminophen"/></div>
-
-                                        <br>
-
-                                        <label class="labels">Dosage (mg)</label>
-                                        <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 20"><span style="margin-left:-23px;">mg</span></div>
-
-                                        <br>
-
-                                        <label class="labels">Pill Count</label>
-                                        <div class='Option'><input style="padding-right:20px; text-align:left; width: 175px" placeholder="ex: 60"><span style="margin-left:-65px;">pills/bottle</span></div>
-
-                                        <br>
-
-                                        <label class="labels">Frequency of Use</label>
-                                        <div class='Option'><input style="text-align:left; width: 35px" placeholder="ex: 2"><span style="margin-left:2px; margin-right: 2px;"> pills </span><input style="text-align:left; width: 35px" placeholder="ex: 2"> <span style="margin-left:2px; margin-right: 2px;"><b>&times;</b> per day</span>
-                                            <textarea class="usenotes" name="Usage_notes" cols="40" rows="3" placeholder="Usage Notes" style="width: 275px;"></textarea></div>
-
-                                        <br>
-
-                                        <label class="labels">Treatment Duration</label>
-                                        <div class='Option'>
-                                            <input type='text' name='temperature' placeholder="ex: 3" style="width: 35px;"/>
-
-                                            <div class="demo">
-                                                <div class="control-group">
-                                                    <select id="select-duration" name="duration" multiple class="demo-default" style="width:140px;" placeholder="Select duration...">
-                                                        <option value="">Select tests...</option>
-                                                        <option value = "Days">Day(s)</option>
-                                                        <option value = "Weeks">Week(s)</option>
-                                                        <option value = "Months">Month(s)</option>
-                                                        <option value = "Years">Year(s)</option>
-                                                    </select>
-                                                </div>
-                                                <script>
-                                                    $('#select-duration').selectize({
-                                                        maxItems: 1
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         <script>
             $('#input-tags').selectize({
                 persist: false,
