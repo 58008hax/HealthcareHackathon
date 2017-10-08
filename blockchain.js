@@ -294,7 +294,7 @@ var dummyData2 = generateNextBlock({
             "workAddr": "1 MD Lane ",
             "fact": "im not a doctor"
         },
-        "visits":{
+        "visits":[{
             "bloodPressure": {
                 "numerator": 120,
                 "denominator": 80   
@@ -313,7 +313,65 @@ var dummyData2 = generateNextBlock({
                 "notes": "take in the morning"
             },
             "isEdit": 0
-        }
+        },
+                 {
+            "bloodPressure": {
+                "numerator": 140,
+                "denominator": 90   
+            },
+            "height": 68,
+            "weight": 150,
+            "temperature": 98.6,
+            "notes": "good health",
+            "date": "2017-09-8",
+            "symptoms": "runny nose",
+            "diagnosis": "common cold",
+            "meds": [{
+                "frequency": "daily",
+                "duration": "6 months",
+                "dosage": "2mg",
+                "notes": "take morning and night with food"
+            },
+                {
+                "frequency": "daily",
+                "duration": "6 months",
+                "dosage": "2mg",
+                "notes": "take morning and night with food"
+                }],
+            "isEdit": 0
+        },
+                 {
+            "bloodPressure": {
+                "numerator": 115,
+                "denominator": 100   
+            },
+            "height": 60,
+            "weight": 120,
+            "temperature": 99,
+            "notes": "healthy",
+            "date": "2017-09-13",
+            "symptoms": "cough",
+            "diagnosis": "flu",
+            "meds": [{
+                "frequency": "daily",
+                "duration": "3 months",
+                "dosage": "5mg",
+                "notes": "take morning and night with food"
+            },
+                {
+                "frequency": "daily",
+                "duration": "6 months",
+                "dosage": "2mg",
+                "notes": "take morning and night with food"
+                },
+                {
+                "frequency": "weekly",
+                "duration": "1 year",
+                "dosage": "20mg",
+                "notes": "take once a week"
+                }],
+            "isEdit": 0
+        }]
     }
 });
 addBlock(dummyData2);
