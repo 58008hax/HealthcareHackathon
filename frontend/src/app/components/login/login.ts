@@ -27,6 +27,9 @@ export class LoginComponent {
     login() {
         console.log("Username: " + this.username);
         console.log("Password: " + this.password);
+        
+        this.dataService.setUserType(this.userType);
+
         switch(this.userType) {
             case "Doctor":
                 console.log("User is doctor...");
@@ -46,6 +49,7 @@ export class LoginComponent {
                 this.router.navigate(['/search'], {});
                 break;
             default:
+                alert("Please select who you are! (Doctor, Patient, Pharmacy");
                 break;
         }        
     }
