@@ -10,6 +10,8 @@ $("#target").submit(function (event) {
     var state = $("state").val();
     var password = $("password").val();
     
+    console.log(fullName + email + phone + street + city + state + password);
+    
     //AJAX GET
     $.get("155.246.208.15:8080/user/add?name=" + fullName + "&email=" + email + "&phoneNumber" + phone + "&street=" + street + "&city=" + city + "&state=" + state + "&password" + password);
     event.preventDefault(); //wont refresh page after submit
