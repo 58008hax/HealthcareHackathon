@@ -1,7 +1,10 @@
 <app-header></app-header>
 
 <div class="patient">
+
     <h1 class="patient-name">{{patientName}}</h1>
+
+    <button class="new-visit-button" type="button" (click)="newVisit()">New Visit</button>
 
     <p-accordion class="accordion">
         <p-accordionTab header="Basic Information">

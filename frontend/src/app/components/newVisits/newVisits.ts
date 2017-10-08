@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'newVisit',
-    templateUrl: './newVisit.html',
-    styleUrls: ['./newVisit.css']
+    templateUrl: './newVisits.html',
+    styleUrls: ['./newVisits.css']
 })
 export class NewVisitComponent {
     constructor() {
-        
+
     }
 }

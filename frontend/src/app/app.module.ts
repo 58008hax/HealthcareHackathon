@@ -37,7 +37,8 @@ import { HttpService } from './services/http.service';
     MyDoctorsComponent,
     ProfileComponent,
     HeaderComponent,
-    SignUpComponent
+    SignUpComponent,
+    NewVisitComponent
   ],
   imports: [
     BrowserModule,
