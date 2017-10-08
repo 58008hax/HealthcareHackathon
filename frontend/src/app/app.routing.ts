@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login';
 import { MyPatientsComponent } from './components/myPatients/myPatients';
 import { MyDoctorsComponent } from './components/myDoctors/myDoctors';
 import { ProfileComponent } from './components/profile/profile';
+import { SignUpComponent } from './components/signUp/signUp';
 
 const appRoutes: Routes = [
     { path: '', component: LoginComponent },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'patient', component: PatientComponent },
     { path: 'myDoctors', component: MyDoctorsComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'signUp', component: SignUpComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

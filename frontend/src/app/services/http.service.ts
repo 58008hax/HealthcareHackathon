@@ -9,5 +9,7 @@ export class HttpService {
 
     }
 
-    
+    signUpUser(userData) {
+        
+    }
 }
