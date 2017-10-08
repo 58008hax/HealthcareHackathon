@@ -20,6 +20,7 @@ import { LoginComponent } from './components/login/login';
 import { MyPatientsComponent } from './components/myPatients/myPatients';
 import { MyDoctorsComponent } from './components/myDoctors/myDoctors';
 import { ProfileComponent } from './components/profile/profile';
+import { HeaderComponent } from './components/header/header';
 
 import { DataService } from './services/data.service';
 import { HttpService } from './services/http.service';
@@ -32,7 +33,8 @@ import { HttpService } from './services/http.service';
     SearchComponent,
     MyPatientsComponent,
     MyDoctorsComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
