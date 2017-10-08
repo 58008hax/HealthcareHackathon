@@ -38,6 +38,7 @@ var initHttpServer = () => {
     //app.get('/', (req, res) => res.sendFile(__dirname + '/frontend/src/index.html'));
 
     app.get('/blocks', (req, res) => res.send(JSON.stringify(blockchain)));
+    app.get('/newestBlock', (req, res) => res.send(JSON.stringify(blockchain[blockchain.length -1])));
     app.post('/mineBlock', (req, res) => {
         var newBlock = generateNextBlock(req.body.data);
         addBlock(newBlock);
