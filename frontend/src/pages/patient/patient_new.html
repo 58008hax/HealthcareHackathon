@@ -17,7 +17,7 @@
     <section id="info">
         <h1>Please enter your data to continue</h1>
 
-        <form>
+        <form name="new_user" ng-controller="newUserController" ng-submit="newUserForm()">
             <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="user_name">
@@ -39,6 +39,15 @@
                 <label for="state">State:</label>
                 <input type="text" id="state" name="user_state">
             </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" id="password" onchange="check_pass();"><br>
+                <label for="confirm_pass">Confirm Password:</label>
+                <input type="password" id="confirm_pass" name="confirm_pass" id="confirm_pass" onchange="check_pass()">
+                <p id="validate-status"></p>
+            </div>
+
+            <!--
             <div>
                 <label for="ssn">Social Security Number:</label>
                 <input type="number" id="ssn" name="user_ssn">
@@ -80,35 +89,26 @@
                 <label for="funfact">Fun Fact:</label>
                 <input type="text" id="funfact" name="user_funfact">
             </div>
-            <div class="button">
-                <button type="submit" onclick="return resetForm()" formaction="patient_home.html">Submit</button>
+-->
+            <div>
+                <button class="button clear" type="reset" onclick="document.getElementById('new_user').reset()">Clear</button>
+                <button class="button submit" type="submit" name="submit" id="submit" formaction="patient_home.html" disabled>Submit</button>
             </div>
 
-        </form>
-
-        <script>
-            function resetForm(form) {
-                // clearing inputs
-                var inputs = form.getElementsByTagName('input');
-                for (var i = 0; i < inputs.length; i++) {
-                    switch (inputs[i].type) {
-                        // case 'hidden':
-                        case 'text':
-                        case 'number':
-                        case 'email':
-                        case 'date':
-                            inputs[i].value = '';
-                            break;
-                        case 'radio':
-                        case 'checkbox':
-                            inputs[i].checked = false;
+            <script>
+                function check_pass() {
+                    if (document.getElementById('password').value ==
+                        document.getElementById('confirm_pass').value) {
+                        document.getElementById('submit').disabled = false;
+                    } else {
+                        document.getElementById('submit').disabled = true;
                     }
                 }
 
-                return false;
-            }
+            </script>
 
-        </script>
+        </form>
+
 
     </section>
 
