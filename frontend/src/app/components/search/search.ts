@@ -9,4 +9,12 @@ export class SearchComponent {
     constructor() {
         
     }
+
+    scanPatient() {
+        
+    }
+
+    searchPatient() {
+
+    }
 }
