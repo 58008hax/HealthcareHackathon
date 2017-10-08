@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="patient_home.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="js/patient_new.js"></script>
     <title>New Patient</title>
 </head>
 
@@ -17,7 +18,7 @@
     <section id="info">
         <h1>Please enter your data to continue</h1>
 
-        <form name="new_user" ng-controller="newUserController" ng-submit="newUserForm()">
+        <form name="new_user">
             <div>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="user_name">
@@ -92,14 +93,14 @@
 -->
             <div>
                 <button class="button clear" type="reset" onclick="document.getElementById('new_user').reset()">Clear</button>
-                <button class="button submit" type="submit" name="submit" id="submit" formaction="patient_home.html" disabled>Submit</button>
+                <button class="button submit" type="submit" name="submit" id="target" disabled>Submit</button>
             </div>
 
             <script>
                 function check_pass() {
                     if (document.getElementById('password').value ==
                         document.getElementById('confirm_pass').value) {
-                        document.getElementById('submit').disabled = false;
+                        document.getElementById('target').disabled = false;
                     } else {
                         document.getElementById('submit').disabled = true;
                     }
