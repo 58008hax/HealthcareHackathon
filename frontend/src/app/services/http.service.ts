@@ -27,7 +27,26 @@ export class HttpService {
         return this.http.get('http://54.242.237.38:3001/newestBlock').map((res:Response) => res.json());
     }
     
-    addBlock() {
-        return this.http.post('http://54.242.237.38:3001/mineBlock', '{"data":"this is a new string"}').map((res:Response) => res.json());
+    addNewVisitBlock(symptoms, bloodPressureO, bloodPressureU, height, weight, temperature, testsRun, diagnosisNotes, medName, dosage, pillCountBottle, freqPillsAmount, freqPillsPerDay, freqPillsNotes, treatmentDurNum, treatmentDurType) {
+        var data = {};
+        data["data"] = {};
+        data["data"]["Data Type"] = "New Visit";
+        data["data"]["Symptoms"] = symptoms;
+        data["data"]["Blood Pressure"] = "" + bloodPressureO + " / " + bloodPressureU;
+        data["data"]["Height"] = height;
+        data["data"]["Weight"] = weight;
+        data["data"]["Temperature"] = temperature;
+        data["data"]["Tests Run"] = testsRun;
+        data["data"]["Diagnosis Notes"] = diagnosisNotes;
+        data["data"]["Medicine Name"] = medName;
+        data["data"]["Dosage"] = dosage;
+        data["data"]["Pill Count Per Bottle"] = pillCountBottle;
+        data["data"]["Frequency Pill Count"] = freqPillsAmount;
+        data["data"]["Frequency Pill Per Day"] = freqPillsPerDay;
+        data["data"]["Frequency Pill Notes"] = freqPillsNotes;
+        data["data"]["Treatment Duration"] = treatmentDurNum;
+        data["data"]["Treatment Duration Type"] = treatmentDurType;
+        
+        return this.http.post('http://54.242.237.38:3001/mineBlock', JSON.stringify(data)).map((res:Response) => res.json());
     }
 }
