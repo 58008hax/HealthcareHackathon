@@ -1,0 +1,16 @@
+<div class="login">
+    <p-selectButton [options]="userTypes" [(ngModel)]="userType"></p-selectButton>
+    <h1>Username</h1>
+    <span class="ui-float-label">
+        <input id="username" type="text" size="30" pInputText [(ngModel)]='username'> 
+        <label for="float-input">Username</label>
+    </span>
+    <h1>Password</h1>
+    <span class="ui-float-label">
+        <input id="password" type="password" size="30" pPassword [(ngModel)]='password'> 
+        <label for="float-input">Password</label>
+    </span>
+
+    <button pButton type="button" label="Click" (click)="login()"></button>
+    
+</div>
